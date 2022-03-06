@@ -1,4 +1,4 @@
-# Discord.py Inter-process Communication (IPC)
+# discord.py Inter-process Communication (IPC)
 
 <p style="text-align: center">
         <a href="https://github.com/Sn1F3rt/discord.py-ipc/actions?query=workflow%3AAnalyze+event%3Apush">
@@ -38,5 +38,5 @@ Create a [GitHub issue](https://github.com/Sn1F3rt/discord.py-ipc/issues/new) or
 
 ## License
 
-Copyright (c) 2022 Sn1F3rt
+Copyright (c) 2022 Sn1F3rt  
 Copyright (c) 2020-21 Ext-Creators
