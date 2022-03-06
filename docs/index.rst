@@ -1,4 +1,4 @@
-Welcome to discord-ext-ipc's documentation!
+Welcome to discord.py-ipc's documentation!
 ===========================================
 
 .. toctree::
