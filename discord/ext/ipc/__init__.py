@@ -2,7 +2,7 @@ __title__ = "discord.py-ipc"
 __author__ = "Sn1F3rt"
 __license__ = "Apache Software License"
 __copyright__ = "Copyright (c) 2022 Sn1F3rt"
-__version__ = "1.0.0b"
+__version__ = "1.0.0"
 
 from typing import NamedTuple, Literal
 
@@ -20,5 +20,5 @@ class VersionInfo(NamedTuple):
 
 
 version_info: VersionInfo = VersionInfo(
-    major=1, minor=0, micro=0, release_level="beta", serial=0
+    major=1, minor=0, micro=0, release_level="final", serial=0
 )
