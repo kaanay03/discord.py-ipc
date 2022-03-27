@@ -1,8 +1,8 @@
 blank_issues_enabled: false
 contact_links:
   - name: Ask a question
-    about: Ask questions and discuss with other users of the library.
-    url: https://github.com/DiscPy/discpy-ext-ipc/discussions
+    about: Ask questions and discuss with other users of the module.
+    url: https://github.com/Sn1F3rt/discord.py-ipc/discussions
   - name: Discord Server
     about: Use our official Discord server to ask for help and questions as well.
-    url: https://discord.gg/z5VQEjskEs
+    url: https://discord.gg/GdSJrQt5Xn
