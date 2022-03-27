@@ -40,7 +40,7 @@ pip install --upgrade discord.py-ipc
 
 - While simultaneously quering the IPC server, you may encounter a `Concurrent call to receive() is not allowed` error. I am aware of this and currently a fix is being implemented to address this issue. 
 
-- If the IPC server is started as in the examples, the `ipc_ready` event wouldn't fire because the bot isn't ready (see 3745d65c8e2dbeeed5e8aa87a0d2f4e2ccc2df98) which otherwise leads to a `RuntimeError`. Instead, you can start the server in the `on_ready` event of discord.py, however, in this case you need to install [nest-asyncio](https://pypi.org/project/nest-asyncio/) and add these two lines at the start of your main bot file (before `discord` imports).
+- If the IPC server is started as in the examples, the `ipc_ready` event wouldn't fire because the bot isn't ready (see [3745d65](https://github.com/Sn1F3rt/discord.py-ipc/commit/3745d65c8e2dbeeed5e8aa87a0d2f4e2ccc2df98)) which otherwise leads to a `RuntimeError`. Instead, you can start the server in the `on_ready` event of discord.py, however, in this case you need to install [nest-asyncio](https://pypi.org/project/nest-asyncio/) and add these two lines at the start of your main bot file (before `discord` imports).
     ```py
     import nest_asyncio
     nest_asyncio.apply()
