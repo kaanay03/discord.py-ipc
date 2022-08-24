@@ -106,11 +106,11 @@ class Server:
         for routes in self.sorted_endpoints.values():
             self.endpoints = {**self.endpoints, **routes}
 
-    def add_cog(self, cog: Cog, *, override: bool = False) -> None:
+    async def add_cog(self, cog: Cog, *, override: bool = False) -> None:
         """
         Hooks into add_cog and allows for easy route finding within classes
         """
-        self._add_cog(cog, override=override)
+        await self._add_cog(cog, override=override)
 
         method_list = [
             getattr(cog, func)
@@ -272,7 +272,7 @@ class Server:
         site = aiohttp.web.TCPSite(runner, self.host, port)
         await site.start()
 
-    def start(self):
+    async def start(self):
         """Starts the IPC server."""
         if self.bot.is_ready():
             self.bot.dispatch("ipc_ready")
@@ -284,8 +284,6 @@ class Server:
             self._multicast_server = aiohttp.web.Application()
             self._multicast_server.router.add_route("GET", "/", self.handle_multicast)
 
-            self.loop.run_until_complete(
-                self.__start(self._multicast_server, self.multicast_port)
-            )
+            await self.__start(self._multicast_server, self.multicast_port)
 
-        self.loop.run_until_complete(self.__start(self._server, self.port))
+        await self.__start(self._server, self.port)
