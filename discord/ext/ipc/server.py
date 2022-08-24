@@ -1,5 +1,6 @@
 import logging
 
+import asyncio
 import aiohttp.web
 from discord.ext.commands import Cog
 
@@ -272,7 +273,7 @@ class Server:
         site = aiohttp.web.TCPSite(runner, self.host, port)
         await site.start()
 
-    def start(self):
+    async def start(self):
         """Starts the IPC server."""
         if self.bot.is_ready():
             self.bot.dispatch("ipc_ready")
@@ -284,8 +285,6 @@ class Server:
             self._multicast_server = aiohttp.web.Application()
             self._multicast_server.router.add_route("GET", "/", self.handle_multicast)
 
-            self.loop.run_until_complete(
-                self.__start(self._multicast_server, self.multicast_port)
-            )
+            await self.__start(self._multicast_server, self.multicast_port)
 
-        self.loop.run_until_complete(self.__start(self._server, self.port))
+        await self.__start(self._server, self.port)
