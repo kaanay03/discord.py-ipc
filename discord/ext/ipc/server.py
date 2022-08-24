@@ -106,11 +106,11 @@ class Server:
         for routes in self.sorted_endpoints.values():
             self.endpoints = {**self.endpoints, **routes}
 
-    def add_cog(self, cog: Cog, *, override: bool = False) -> None:
+    async def add_cog(self, cog: Cog, *, override: bool = False) -> None:
         """
         Hooks into add_cog and allows for easy route finding within classes
         """
-        self._add_cog(cog, override=override)
+        await self._add_cog(cog, override=override)
 
         method_list = [
             getattr(cog, func)
